@@ -41,66 +41,106 @@
         </nav>
     </header>
 
-    <main>
-        
-        <section id="hero">
-            <div class="container py-5">
-                <h1>Trouvez le talent africain qu'il vous faut</h1>
-                <p>AfriTalent connecte les freelances africains aux clients du monde entier.</p>
-                <img src="https://via.placeholder.com/600x400" alt="Illustration AfriTalent Hero">
-                <br><br>
-                <a href="freelances.html" class="btn btn-primary">Decouvrir les talents</a>
+ <main>
+    
+    <section id="hero">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-text">
+                    <h1 class="display-3">Trouvez le <span class="text-highlight">talent africain</span> qu'il vous faut</h1>
+                    <p class="lead">AfriTalent connecte les freelances africains les plus qualifiés aux clients et entreprises du monde entier.</p>
+                    <a href="freelances.html" class="btn btn-custom mt-3">Découvrir les talents</a>
+                </div>
+                <div class="col-lg-6 hero-image-container">
+                    <img src="https://via.placeholder.com/600x450" alt="Illustration AfriTalent Hero" class="hero-img">
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="services">
-            <div class="container py-5">
-                <h2>Nos domaines d'expertise</h2>
-                <div class="row">
-                    <div class="col-md-4">
-                        <h3>Developpement Web</h3>
-                        <p>Sites vitrine, applications web, e-commerce.</p>
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Comment ça marche ?</h2>
+            
+            <div class="bento-grid">
+                <div class="bento-item item-large">
+                    <h3>1. Créez votre compte</h3>
+                    <p>Inscrivez votre entreprise en quelques clics et accédez instantanément à notre catalogue exclusif de profils tech qualifiés.</p>
+                </div>
+                <div class="bento-item item-tall">
+                    <h3>2. Sélectionnez</h3>
+                    <p>Filtrez par compétences, expérience ou pays pour trouver le match parfait.</p>
+                </div>
+                <div class="bento-item item-normal">
+                    <h3>3. Testez</h3>
+                    <p>Évaluez les profils avec nos tests techniques intégrés.</p>
+                </div>
+                <div class="bento-item item-wide">
+                    <h3>4. Collaborez sereinement</h3>
+                    <p>Lancez votre projet ! AfriTalent sécurise les contrats, le suivi des livrables et la gestion de vos paiements en toute transparence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Nos domaines d'expertise</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card-category">
+                        <h3>Développement Web</h3>
+                        <p>Sites vitrine, applications web complexes et plateformes e-commerce sur mesure.</p>
                     </div>
-                    <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <div class="card-category">
                         <h3>Design Graphique</h3>
-                        <p>Identite visuelle, UI/UX, illustrations.</p>
+                        <p>Identités visuelles marquantes, maquettage UI/UX web et mobile, illustrations.</p>
                     </div>
-                    <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <div class="card-category">
                         <h3>Marketing Digital</h3>
-                        <p>Reseaux sociaux, SEO, campagnes publicitaires.</p>
+                        <p>Stratégie réseaux sociaux, SEO avancé et pilotage de campagnes publicitaires.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="statistiques">
-            <div class="container py-5">
-                <h2>AfriTalent en chiffres</h2>
-                <div class="row text-center">
-                    <div class="col-md-4">
-                        <p>+ 200+ Freelances</p>
+    <section id="temoignages" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Ce que disent nos clients</h2>
+            
+            <div id="carouselTemoignages" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner text-center py-4">
+                    <div class="carousel-item active">
+                        <blockquote class="blockquote col-lg-8 mx-auto">
+                            <p class="fs-4">"AfriTalent m'a permis de trouver un développeur compétent en moins de 48h. Une vraie révolution pour nos équipes."</p>
+                            <p class="blockquote-footer mt-2">Aminata Diallo, Directrice Marketing</p>
+                        </blockquote>
                     </div>
-                    <div class="col-md-4">
-                        <p>+ 45 Pays representes</p>
-                    </div>
-                    <div class="col-md-4">
-                        <p>+ 3 800+ Projets realises</p>
+                    <div class="carousel-item">
+                        <blockquote class="blockquote col-lg-8 mx-auto">
+                            <p class="fs-4">"La qualité des profils est impressionnante. Le suivi et la sécurisation des paiements nous mettent totalement en confiance."</p>
+                            <p class="blockquote-footer mt-2">Marc Dubois, CTO chez TechEurope</p>
+                        </blockquote>
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Précédent</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                    <span class="visually-hidden">Suivant</span>
+                </button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="temoignages">
-            <div class="container py-5">
-                <h2>Ce que disent nos clients</h2>
-                <blockquote class="blockquote">
-                    <p>AfriTalent m'a permis de trouver un developpeur competent en moins de 48h.</p>
-                    <p class="blockquote-footer">Aminata Diallo, Directrice Marketing</p>
-                </blockquote>
-            </div>
-        </section>
-
-    </main>
+</main>
 
     <footer>
         <div class="container py-4">

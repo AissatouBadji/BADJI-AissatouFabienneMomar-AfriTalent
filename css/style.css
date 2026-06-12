@@ -216,3 +216,62 @@ main {
     padding: var(--spacing-lg);
     box-shadow: 0 10px 25px rgba(0,0,0,0.02);
 }
+/* ==========================================================================
+   9. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+
+/* 📱 Écrans Mobiles (jusqu'à 767px) - Cible le test à 375px */
+@media (max-width: 767px) {
+    /* Typographie expressive plus petite pour que ça ne déborde pas */
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    /* On casse le décalage de l'image sur mobile pour que ce soit propre */
+    .hero-img {
+        box-shadow: 10px 10px 0px var(--color-secondary);
+        margin-top: var(--spacing-lg);
+    }
+
+    /* La Bento Grid passe sur 1 seule colonne verticale */
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .bento-item {
+        margin-bottom: var(--spacing-md);
+    }
+
+    /* Liens de la navbar : on réduit la marge à gauche pour le menu vertical */
+    .navbar-nav .nav-link {
+        margin-left: 0;
+        padding: var(--spacing-sm) 0;
+    }
+}
+
+/* 📐 Tablettes (de 768px à 1199px) - Cible le test à 768px */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    /* Adaptation de la Bento Grid pour tablette */
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+    
+    .item-large, .item-wide, .item-tall {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+}
+
+/* 💻 Grands Écrans / Desktops (1200px et plus) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

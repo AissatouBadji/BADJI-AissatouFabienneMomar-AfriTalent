@@ -1,17 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>AfriTalent — contact</title>
- <!-- Bootstrap 5 via CDN : feuille de style -->
- <link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-rel="stylesheet">
- <!-- Votre feuille de style personnelle -->
- <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriTalent - Contact</title>
+
+    <!-- CDN Bootstrap 5 (CSS) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Votre feuille de style personnelle -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <!-- Navigation Bootstrap commune à toutes les pages -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">AfriTalent</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="freelances.html">Freelances</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tarifs.html">Tarifs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">A propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal spécifique à la page Contact -->
+    <main>
+        <section id="formulaire-contact">
+            <div class="container py-5">
+                <h2>Contactez-nous</h2>
+                <p>Vous avez une idée de projet ou une question ? Écrivez-nous via ce formulaire et nos équipes vous recontacteront sous 24h.</p>
+                
+                <!-- Formulaire textuel de base -->
+                <form>
+                    <div>
+                        <label for="nomClient">Nom complet :</label><br>
+                        <input type="text" id="nomClient" placeholder="Ex: Jean Dupont">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="emailClient">Adresse email :</label><br>
+                        <input type="email" id="emailClient" placeholder="Ex: contact@entreprise.com">
+                    </div>
+                    <br>
+                    <div>
+                        <label for="messageClient">Votre projet ou demande :</label><br>
+                        <textarea id="messageClient" placeholder="Décrivez succinctement votre besoin..."></textarea>
+                    </div>
+                    <br>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container py-4">
+            <p>&copy; 2026 AfriTalent. Tous droits reserves.</p>
+        </div>
+    </footer>
+
+    <!-- CDN Bootstrap 5 (JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

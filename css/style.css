@@ -275,3 +275,41 @@ main {
         max-width: 1140px;
     }
 }
+/* ==========================================================================
+   10. STYLES POUR LE COMMIT 6 (JS & INTERACTION)
+   ========================================================================== */
+
+/* Classes pour le Dark Mode */
+body.dark-theme {
+    background-color: #0e1622 !important;
+    color: #f8f9fa !important;
+}
+
+body.dark-theme .bento-item, 
+body.dark-theme .card-category,
+body.dark-theme #carouselTemoignages {
+    background-color: #1b263b !important;
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme h1, 
+body.dark-theme h2, 
+body.dark-theme h3 {
+    color: #ffffff !important;
+}
+
+body.dark-theme .text-highlight {
+    color: #ff8c3a !important;
+}
+
+/* Effet au Scroll sur la Navbar (Fond, ombre, shrink) */
+.navbar {
+    transition: all 0.4s ease !important; /* Transition fluide pour le shrink */
+}
+
+.navbar-scrolled {
+    padding: 0.4rem 0 !important; /* Effet shrink (réduction de taille) */
+    background-color: #050c18 !important; /* Fond encore plus sombre ou différent */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Ajout d'une ombre portée */
+}

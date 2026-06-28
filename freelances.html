@@ -1,23 +1,248 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>AfriTalent — Freelances</title>
- <!-- Bootstrap 5 via CDN : feuille de style -->
- <link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-rel="stylesheet">
- <!-- Votre feuille de style personnelle -->
- <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AfriTalent - Freelances</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- <!-- Le contenu de la page sera ajoute ici -->
- <!-- Bootstrap 5 via CDN : script JavaScript -->
- <script
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-></script>
- <!-- Votre script JavaScript -->
- <script src="js/main.js"></script>
- </body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">AfriTalent</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="freelances.html">Freelances</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tarifs.html">Tarifs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="#" class="btn btn-primary ms-3">Rejoindre AfriTalent</a>
+                    <button id="darkModeToggle" class="btn btn-outline-secondary ms-2">
+                        <i class="bi bi-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- BARRE DE FILTRES -->
+        <section id="filtres">
+            <div class="container">
+                <h1>Nos Freelances</h1>
+                <p>Trouvez le talent qu'il vous faut parmi nos experts</p>
+                <div class="filtres-btn">
+                    <button class="btn btn-filter active" data-filtre="tous">Tous</button>
+                    <button class="btn btn-filter" data-filtre="dev">Développement Web</button>
+                    <button class="btn btn-filter" data-filtre="design">Design UI/UX</button>
+                    <button class="btn btn-filter" data-filtre="marketing">Marketing Digital</button>
+                    <button class="btn btn-filter" data-filtre="data">Data & IA</button>
+                    <button class="btn btn-filter" data-filtre="redaction">Rédaction Tech</button>
+                    <button class="btn btn-filter" data-filtre="devops">DevOps & Cloud</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRILLE DE FREELANCES -->
+        <section id="liste-freelances">
+            <div class="container">
+                <div class="row" id="freelancesGrid">
+
+                    <!-- Freelance 1 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="dev">
+                        <div class="card">
+                            <img src="images/freelance1.jpg" class="card-img-top" alt="Photo de Moussa Diop">
+                            <div class="card-body">
+                                <h5 class="card-title">Moussa Diop</h5>
+                                <p class="card-text specialite">Développeur Web Full Stack</p>
+                                <p class="card-text">Expert React et Node.js avec 5 ans d'expérience.</p>
+                                <p class="card-text"><strong>25 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐⭐ (48 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 2 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="design">
+                        <div class="card">
+                            <img src="images/freelance2.jpg" class="card-img-top" alt="Photo de Fatou Ndiaye">
+                            <div class="card-body">
+                                <h5 class="card-title">Fatou Ndiaye</h5>
+                                <p class="card-text specialite">Designer UI/UX</p>
+                                <p class="card-text">Spécialiste Figma et design mobile first.</p>
+                                <p class="card-text"><strong>20 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐⭐ (35 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 3 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="marketing">
+                        <div class="card">
+                            <img src="images/freelance3.jpg" class="card-img-top" alt="Photo de Awa Traoré">
+                            <div class="card-body">
+                                <h5 class="card-title">Awa Traoré</h5>
+                                <p class="card-text specialite">Marketing Digital</p>
+                                <p class="card-text">Experte SEO, réseaux sociaux et publicité en ligne.</p>
+                                <p class="card-text"><strong>15 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐ (22 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 4 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="data">
+                        <div class="card">
+                            <img src="images/freelance4.jpg" class="card-img-top" alt="Photo de Koffi Asante">
+                            <div class="card-body">
+                                <h5 class="card-title">Koffi Asante</h5>
+                                <p class="card-text specialite">Data & IA</p>
+                                <p class="card-text">Data scientist spécialisé en machine learning.</p>
+                                <p class="card-text"><strong>35 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐⭐ (19 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 5 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="redaction">
+                        <div class="card">
+                            <img src="images/freelance5.jpg" class="card-img-top" alt="Photo de Marie Koné">
+                            <div class="card-body">
+                                <h5 class="card-title">Marie Koné</h5>
+                                <p class="card-text specialite">Rédaction Tech</p>
+                                <p class="card-text">Rédactrice technique et blogueuse spécialisée.</p>
+                                <p class="card-text"><strong>10 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐ (31 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 6 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="devops">
+                        <div class="card">
+                            <img src="images/freelance6.jpg" class="card-img-top" alt="Photo de Ibrahim Sawadogo">
+                            <div class="card-body">
+                                <h5 class="card-title">Ibrahim Sawadogo</h5>
+                                <p class="card-text specialite">DevOps & Cloud</p>
+                                <p class="card-text">Expert AWS, Docker et intégration continue.</p>
+                                <p class="card-text"><strong>30 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐⭐ (27 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 7 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="dev">
+                        <div class="card">
+                            <img src="images/freelance7.jpg" class="card-img-top" alt="Photo de Aminata Bah">
+                            <div class="card-body">
+                                <h5 class="card-title">Aminata Bah</h5>
+                                <p class="card-text specialite">Développement Web</p>
+                                <p class="card-text">Développeuse frontend spécialisée Vue.js et CSS.</p>
+                                <p class="card-text"><strong>22 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐ (15 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 8 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="design">
+                        <div class="card">
+                            <img src="images/freelance8.jpg" class="card-img-top" alt="Photo de Seydou Coulibaly">
+                            <div class="card-body">
+                                <h5 class="card-title">Seydou Coulibaly</h5>
+                                <p class="card-text specialite">Design UI/UX</p>
+                                <p class="card-text">Designer produit avec expertise en design system.</p>
+                                <p class="card-text"><strong>18 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐⭐ (42 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Freelance 9 -->
+                    <div class="col-12 col-md-6 col-lg-4 freelance-card" data-categorie="data">
+                        <div class="card">
+                            <img src="images/freelance9.jpg" class="card-img-top" alt="Photo de Nadia Ouédraogo">
+                            <div class="card-body">
+                                <h5 class="card-title">Nadia Ouédraogo</h5>
+                                <p class="card-text specialite">Data & IA</p>
+                                <p class="card-text">Analyste data et experte en visualisation Python.</p>
+                                <p class="card-text"><strong>28 000 FCFA / heure</strong></p>
+                                <p>⭐⭐⭐⭐ (11 avis)</p>
+                                <a href="#" class="btn btn-primary">Voir le profil</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>AfriTalent</h5>
+                    <p>La plateforme de freelance tech leader en Afrique.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Liens utiles</h5>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="freelances.html">Freelances</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Ressources</h5>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p>contact@afritalent.com</p>
+                    <p>+221 77 000 00 00</p>
+                    <p>Dakar, Sénégal</p>
+                    <div>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <p>&copy; <span id="year"></span> AfriTalent. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
 </html>

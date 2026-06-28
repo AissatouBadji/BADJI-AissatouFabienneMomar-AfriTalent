@@ -166,3 +166,161 @@ const fadeObserver = new IntersectionObserver(function(entries) {
 sections.forEach(function(section) {
     fadeObserver.observe(section);
 });
+
+
+/* =============================================
+   FILTRAGE DYNAMIQUE DES FREELANCES
+   ============================================= */
+// On sélectionne tous les boutons de filtre
+const btnsFiltres = document.querySelectorAll('.btn-filter');
+// On sélectionne toutes les cartes freelances
+const cartesFree = document.querySelectorAll('.freelance-card');
+
+// Si on est sur la page freelances
+if (btnsFiltres.length > 0) {
+
+    btnsFiltres.forEach(function(btn) {
+
+        // Quand on clique sur un bouton de filtre
+        btn.addEventListener('click', function() {
+
+            // On retire la classe active de tous les boutons
+            btnsFiltres.forEach(function(b) {
+                b.classList.remove('active');
+            });
+
+            // On ajoute la classe active au bouton cliqué
+            btn.classList.add('active');
+
+            // On récupère la valeur du filtre
+            const filtre = btn.getAttribute('data-filtre');
+
+            // On parcourt toutes les cartes
+            cartesFree.forEach(function(carte) {
+
+                // Si le filtre est "tous" on affiche tout
+                if (filtre === 'tous') {
+                    carte.style.display = 'block';
+                } else {
+                    // On récupère la catégorie de la carte
+                    const categorie = carte.getAttribute('data-categorie');
+
+                    // Si la catégorie correspond au filtre
+                    if (categorie === filtre) {
+                        carte.style.display = 'block';
+                    } else {
+                        carte.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
+}
+
+/* =============================================
+   VALIDATION DU FORMULAIRE DE CONTACT
+   ============================================= */
+const btnEnvoyer = document.getElementById('btnEnvoyer');
+
+if (btnEnvoyer) {
+
+    btnEnvoyer.addEventListener('click', function() {
+
+        // On récupère les valeurs de chaque champ
+        const nom = document.getElementById('nom').value.trim();
+        const prenom = document.getElementById('prenom').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const sujet = document.getElementById('sujet').value;
+        const message = document.getElementById('message').value.trim();
+
+        // On récupère les divs d'erreur
+        const errNom = document.getElementById('erreur-nom');
+        const errPrenom = document.getElementById('erreur-prenom');
+        const errEmail = document.getElementById('erreur-email');
+        const errSujet = document.getElementById('erreur-sujet');
+        const errMessage = document.getElementById('erreur-message');
+
+        // On remet à zéro tous les messages d'erreur
+        errNom.textContent = '';
+        errPrenom.textContent = '';
+        errEmail.textContent = '';
+        errSujet.textContent = '';
+        errMessage.textContent = '';
+
+        // On remet les bordures normales
+        document.getElementById('nom').classList.remove('is-invalid', 'is-valid');
+        document.getElementById('prenom').classList.remove('is-invalid', 'is-valid');
+        document.getElementById('email').classList.remove('is-invalid', 'is-valid');
+        document.getElementById('sujet').classList.remove('is-invalid', 'is-valid');
+        document.getElementById('message').classList.remove('is-invalid', 'is-valid');
+
+        // Variable pour savoir si le formulaire est valide
+        let valide = true;
+
+        // Validation du nom
+        if (nom === '') {
+            errNom.textContent = 'Le nom est obligatoire.';
+            document.getElementById('nom').classList.add('is-invalid');
+            valide = false;
+        } else {
+            document.getElementById('nom').classList.add('is-valid');
+        }
+
+        // Validation du prénom
+        if (prenom === '') {
+            errPrenom.textContent = 'Le prénom est obligatoire.';
+            document.getElementById('prenom').classList.add('is-invalid');
+            valide = false;
+        } else {
+            document.getElementById('prenom').classList.add('is-valid');
+        }
+
+        // Validation de l'email avec regex
+        // Le regex vérifie le format : quelquechose@domaine.extension
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (email === '') {
+            errEmail.textContent = 'L\'email est obligatoire.';
+            document.getElementById('email').classList.add('is-invalid');
+            valide = false;
+        } else if (!regexEmail.test(email)) {
+            errEmail.textContent = 'Format d\'email invalide.';
+            document.getElementById('email').classList.add('is-invalid');
+            valide = false;
+        } else {
+            document.getElementById('email').classList.add('is-valid');
+        }
+
+        // Validation du sujet
+        if (sujet === '') {
+            errSujet.textContent = 'Veuillez choisir un sujet.';
+            document.getElementById('sujet').classList.add('is-invalid');
+            valide = false;
+        } else {
+            document.getElementById('sujet').classList.add('is-valid');
+        }
+
+        // Validation du message (minimum 20 caractères)
+        if (message === '') {
+            errMessage.textContent = 'Le message est obligatoire.';
+            document.getElementById('message').classList.add('is-invalid');
+            valide = false;
+        } else if (message.length < 20) {
+            errMessage.textContent = 'Le message doit contenir au moins 20 caractères.';
+            document.getElementById('message').classList.add('is-invalid');
+            valide = false;
+        } else {
+            document.getElementById('message').classList.add('is-valid');
+        }
+
+        // Si tout est valide on affiche le message de succès
+        if (valide) {
+            document.getElementById('messageSucces').style.display = 'block';
+            // On vide le formulaire
+            document.getElementById('nom').value = '';
+            document.getElementById('prenom').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('sujet').value = '';
+            document.getElementById('message').value = '';
+        }
+    });
+}
